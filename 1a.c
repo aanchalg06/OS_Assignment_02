@@ -9,6 +9,7 @@ pthread_t Thr_c;
 
 
 void* countA(int pri,char pol[]){
+   
     struct sched_param sch;
     int policy=0;
 
@@ -24,17 +25,14 @@ void* countA(int pri,char pol[]){
     
     sch.sched_priority = pri;
 
-    if (pthread_setschedparam(Thr_a, policy, &sch) ==0)
-{
-    int i=0;
+    if (pthread_setschedparam(Thr_a, policy, &sch) ==0){
+        int i=0;
     while(i<=pow(2,30)){
         i++;
-    }
-}
-
-}
+    }}}
 
 void* countB(int pri,char pol[]){
+  
     struct sched_param sch;
     int policy=0;
 
@@ -50,17 +48,14 @@ void* countB(int pri,char pol[]){
 
     sch.sched_priority = pri;
 
-    if (pthread_setschedparam(Thr_b, policy, &sch) ==0)
-{
+    if (pthread_setschedparam(Thr_b, policy, &sch) ==0){
     int i=0;
     while(i<=pow(2,30)){
         i++;
-    }
-}
-
-}
+    }}}
 
 void* countC(int pri,char pol[]){
+
     struct sched_param sch;
     int policy=0;
 
@@ -76,15 +71,12 @@ void* countC(int pri,char pol[]){
 
     sch.sched_priority = pri;
 
-    if (pthread_setschedparam(Thr_c, policy, &sch) ==0)
-{
+    if (pthread_setschedparam(Thr_c, policy, &sch) ==0){
     int i=0;
     while(i<=pow(2,30)){
         i++;
-    }
-}
+    }}}
 
-}
 
 int main(){
     int nice_pri=0;
@@ -97,7 +89,7 @@ int main(){
     char rr[20]="SCHED_RR";
     //THREAD A
     //priority value is 0
-    printf("For Thread A: priority value 0");
+    printf("For Thread A: priority value 0\n");
     printf("For Thread A ; SCHED_OTHER\n");
 
     struct timespec start, finish;
@@ -106,8 +98,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     double time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -119,8 +112,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -132,8 +126,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -142,7 +137,7 @@ int main(){
 
 
     //priority value is 1
-    printf("For Thread A: priority value 1");
+    printf("For Thread A: priority value 1\n");
     printf("For Thread A ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -151,8 +146,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -164,8 +160,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -177,8 +174,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -186,7 +184,7 @@ int main(){
 
 
     //priority value is 5
-    printf("For Thread A: priority value 0");
+    printf("For Thread A: priority value 5\n");
     printf("For Thread A ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -195,8 +193,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
-
-    for(int i=0;i<time;i+=0.00001){
+    printf("%lf\n",time);
+    
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -208,8 +207,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -221,14 +221,15 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
 
     //priority value is 10
-    printf("For Thread A: priority value 0");
+    printf("For Thread A: priority value 10\n");
     printf("For Thread A ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -237,8 +238,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -250,8 +252,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -263,8 +266,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -273,7 +277,7 @@ int main(){
 
     //THREAD B
     //priority value is 0
-    printf("For Thread B: priority value 0");
+    printf("For Thread B: priority value 0\n");
     printf("For Thread B ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -282,8 +286,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -295,8 +300,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -308,8 +314,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -318,7 +325,7 @@ int main(){
 
 
     //priority value is 1
-    printf("For Thread B: priority value 1");
+    printf("For Thread B: priority value 1\n");
     printf("For Thread B ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -327,8 +334,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -340,8 +348,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -353,8 +362,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -362,7 +372,7 @@ int main(){
 
 
     //priority value is 5
-    printf("For Thread B: priority value 0");
+    printf("For Thread B: priority value 5\n");
     printf("For Thread B ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -371,8 +381,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -384,8 +395,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -397,14 +409,15 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
 
     //priority value is 10
-    printf("For Thread B: priority value 0");
+    printf("For Thread B: priority value 10\n");
     printf("For Thread B: SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -413,8 +426,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -426,8 +440,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -439,8 +454,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -450,7 +466,7 @@ int main(){
 
     //THREAD C
     //priority value is 0
-    printf("For Thread C: priority value 0");
+    printf("For Thread C: priority value 0\n");
     printf("For Thread C ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -459,8 +475,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -472,8 +489,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -485,8 +503,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -495,7 +514,7 @@ int main(){
 
 
     //priority value is 1
-    printf("For Thread C: priority value 1");
+    printf("For Thread C: priority value 1\n");
     printf("For Thread C ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -504,8 +523,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -517,8 +537,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -530,8 +551,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -539,7 +561,7 @@ int main(){
 
 
     //priority value is 5
-    printf("For Thread C: priority value 0");
+    printf("For Thread C: priority value 5\n");
     printf("For Thread C ; SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -548,8 +570,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -561,8 +584,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -574,14 +598,15 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
 
     //priority value is 10
-    printf("For Thread C: priority value 0");
+    printf("For Thread C: priority value 10\n");
     printf("For Thread C: SCHED_OTHER\n");
 
     // struct timespec start, finish;
@@ -590,8 +615,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -603,8 +629,9 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
@@ -616,13 +643,11 @@ int main(){
     clock_gettime( CLOCK_REALTIME, &finish);
 
     time=(double)( finish.tv_nsec - start.tv_nsec)/ (double)(1000000000);
+    printf("%lf\n",time);
 
-    for(int i=0;i<time;i+=0.00001){
+    for(double i=0;i<time;i+=0.00001){
         printf("*");
     }
     printf("\n");
-
-
-
 
 }
