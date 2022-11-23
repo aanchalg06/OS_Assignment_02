@@ -1,5 +1,5 @@
 all:
-	gcc 1a.c -o thr -pthread
+	gcc 1.1.c -o thr -pthread
 	./thr
 
 clean:
