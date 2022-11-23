@@ -112,7 +112,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
@@ -132,7 +132,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
@@ -152,7 +152,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
@@ -178,7 +178,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
@@ -199,7 +199,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
@@ -220,7 +220,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
@@ -246,7 +246,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
@@ -267,7 +267,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
@@ -288,7 +288,7 @@ int main(){
 
     printf("%lf\n",time);
 
-    for(double i=0;i<time;i+=1){
+    for(double i=0;i<time;i+=0.1){
         printf("*");
     }
     printf("\n");
