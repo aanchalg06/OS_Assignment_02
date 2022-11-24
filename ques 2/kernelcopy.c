@@ -20,10 +20,10 @@ int main()
         printf("\n");
     }
 
-    float *m1[][]={{4,6},{12,6}};
+    float *m1[][2]={{4,6},{12,6}};
     
     
-    float *m2[][]={{0,0},{0,0};
+    float *m2[][2]={{0,0},{0,0};
 
     system_call_var = syscall(kernel_2d_memcpy,m1,m2,2,2);
 
