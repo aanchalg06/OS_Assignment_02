@@ -12,17 +12,15 @@ int main()
 {
     long system_call_var;
     
-   
-
-    float *m1[][2]={{1,1},{1,1}};
-    
-    
     float *m2[][2]={{0,0},{0,0};
+    float *m1[][2]={{1,1},{1,1}};
+   
+    
     
      printf("Matrix 1 function is: ");
     for(int i=0;i<2;i++){
         for(int j=0;j<2;j++){
-            printf("%f ",m1[i][j]);
+            printf("%f ",m2[i][j]);
         }
         printf("\n");
     }
@@ -33,7 +31,7 @@ int main()
     {
         printf("451 exec done \n");
     }
-    printf("Matrix 1 function is: ");
+    printf("Matrix 2 function is: ");
                    
     for(int i=0;i<2;i++){
         for(int j=0;j<2;j++){
